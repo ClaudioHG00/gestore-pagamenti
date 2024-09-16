@@ -1,0 +1,60 @@
+.logo {
+    height: 3em;
+    padding: 1.5em;
+  }
+
+.navbar {
+    height: 100vh; /* Fa sì che la navbar occupi l'intera altezza della pagina */
+    width: 200px; /* Larghezza della navbar */
+    background-color: #ffffff; /* Colore di sfondo */
+    position: fixed; /* La navbar rimane fissa a sinistra */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column; /* Disposizione verticale */
+    align-items: center; /* Allinea gli elementi a sinistra */
+    padding-top: 20px;
+}
+
+.navbar ul {
+list-style-type: none; /* Rimuove i puntini dalla lista */
+padding: 0;
+margin: 0;
+width: 100%; /* Fa sì che i link occupino tutta la larghezza */
+}
+
+.navbar li {
+width: 100%;
+}
+
+.navbar li a {
+display: block;
+color: rgb(158, 158, 158);
+padding: 15px;
+text-decoration: none;
+}
+
+.navbar li a.active {  /* solo quando elemento a = attivo */
+    color: #D90378;
+    font-weight: bold;
+}
+
+.navbar-icon {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-row {
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spazio {
+    margin-bottom: 15vh;
+}
+
