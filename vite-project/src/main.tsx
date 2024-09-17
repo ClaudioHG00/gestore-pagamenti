@@ -8,9 +8,14 @@ import { Profilo } from './pages/Profilo/component.tsx';
 import { SaldoMock } from './mocks/saldoMock.tsx';
 import { TransazioniMock } from './mocks/transazioniMock.tsx';
 import { Transazioni } from './pages/Transazioni/component.tsx';
+import { MetodiPagamentoMock } from './mocks/metodiPagamentoMock.tsx'
 
 
 const Routes = [
+  {
+    path: "/",
+    element: <App></App>
+  },
   {
     path: "/home",
     element: <App></App>
@@ -29,7 +34,7 @@ const Routes = [
   },
   {
     path: "/pagamento",
-    element: <Pagamento></Pagamento>      
+    element: <Pagamento metodiPagamento={MetodiPagamentoMock} ></Pagamento>      
   },
 ]
 

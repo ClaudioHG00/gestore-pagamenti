@@ -1,0 +1,10 @@
+.form-inserimento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 15px;
+}
+
+.form-row {
+    
+}
