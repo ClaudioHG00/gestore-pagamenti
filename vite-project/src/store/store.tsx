@@ -1,30 +1,14 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ProfiloType } from "../mocks/profiloMock"
+import { configureStore } from '@reduxjs/toolkit';
+import { profiloSlice } from './profiloSlice';
+import { metodiPagamentoSlice } from './pagamentoSlice';
 
-// interface ProfiloState {
-//     state: Profilo
-// }
+const store = configureStore({
+  reducer: {
+    profilo: profiloSlice.reducer, 
+    metodiPagamento: metodiPagamentoSlice.reducer,
+  },
+});
 
-const initialState: ProfiloType = {
-    nome: '',
-    cognome: '',
-    email: '',
-    telefono: '',
-}
-
-const profiloSlice = createSlice({
-    name: 'profilo',
-    initialState,
-    reducers: {
-        // modifica(state, action: PayloadAction<Profilo>) {
-        //     const updatedProfilo = {...state,...action.payload}
-        //     state = updatedProfilo
-        // }
-        modifica(state, action: PayloadAction<Partial<ProfiloType>>) {
-            state = {...state,...action.payload}
-        }
-    }
-}) 
-
-export const { modifica } = profiloSlice.actions
-// export default profiloSlice.reducer
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export default store;

@@ -3,23 +3,20 @@ import pleoLogo from '../../assets/pleo-logo.png'
 import dashboardIcon from '../../assets/dashboard-icon.svg'
 import profileIcon from '../../assets/profile-icon.svg'
 import pagamentoIcon from '../../assets/pagamento-icon.svg'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // Uso Navlinks piuttosto che useNavigate, in quanto active gia' incorporato
 import { NavLink } from 'react-router-dom';
-import { modifica } from '../../store/store';
 
 export const Navbar = () => {
 
-    const dispatch = useDispatch();
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const profilo = useSelector((state: any) => state.profilo);
-
-    dispatch(modifica(profilo))
+    const utente: string = profilo.nome + '  ' + profilo.cognome
 
     return    (
         <nav className="navbar">
 
-            <NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : '')}><img src={pleoLogo} alt="Logo di Pleo" className='logo' /></NavLink>
+            <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}><img src={pleoLogo} alt="Logo di Pleo" className='logo' /></NavLink>
             
             <div className='spazio'></div>
             <ul>
@@ -35,7 +32,11 @@ export const Navbar = () => {
                     <img src={pagamentoIcon} className='navbar-icon'/>
                     <NavLink to="/pagamento" className={({ isActive }) => (isActive ? 'active' : '')}>Pagamento</NavLink>
                 </li>
+                <li className='navbar-row utente'>
+                <NavLink to="/profilo">{utente}</NavLink>
+                </li>
             </ul>
+
         </nav>
     ) 
 }

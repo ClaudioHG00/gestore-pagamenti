@@ -1,9 +1,4 @@
-export interface ProfiloType {
-    nome: string,
-    cognome: string,
-    email: string,
-    telefono: string,
-}
+import { ProfiloType } from "../pages/Profilo/component";
 
 export const ProfiloMock: ProfiloType = {
     nome: "Claudio",

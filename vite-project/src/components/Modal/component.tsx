@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { ModalContent } from "../ModalContent/component";
-import { MetodoPagamento } from "../../mocks/metodiPagamentoMock";
 
 interface ModalProps {
-    metodoPagamento: MetodoPagamento
+    // metodoPagamento: MetodoPagamento
+    id: number
 }
 
 export const Modal = (props: ModalProps) => {
@@ -15,10 +15,10 @@ export const Modal = (props: ModalProps) => {
         <button onClick={() => setShowModal(true)}>
           Modifica
         </button>
-        {showModal && createPortal(
-          <ModalContent onClose={() => setShowModal(false)} metodoPagamento={props.metodoPagamento} />,
-          document.body
-        )}
+          {showModal && createPortal(
+            <ModalContent onClose={() => setShowModal(false)} id={props.id} />,
+            document.body
+          )}
       </>
     );
   }

@@ -1,10 +1,4 @@
-export interface MetodoPagamento {
-    id: number
-    tipo: string
-    numeroConto: number
-    dataScadenza: Date
-    codiceSicurezza?: number
-}
+import { MetodoPagamento } from "../pages/Pagamento/component";
 
 export const MetodiPagamentoMock: MetodoPagamento[] = [
     {

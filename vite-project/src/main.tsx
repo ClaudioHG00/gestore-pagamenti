@@ -8,8 +8,8 @@ import { Profilo } from './pages/Profilo/component.tsx';
 import { SaldoMock } from './mocks/saldoMock.tsx';
 import { TransazioniMock } from './mocks/transazioniMock.tsx';
 import { Transazioni } from './pages/Transazioni/component.tsx';
-import { MetodiPagamentoMock } from './mocks/metodiPagamentoMock.tsx'
-
+import { Provider } from 'react-redux';
+import store from './store/store.tsx';
 
 const Routes = [
   {
@@ -34,12 +34,14 @@ const Routes = [
   },
   {
     path: "/pagamento",
-    element: <Pagamento metodiPagamento={MetodiPagamentoMock} ></Pagamento>      
+    element: <Pagamento></Pagamento>      
   },
 ]
 
 const router = createBrowserRouter(Routes)
 
 createRoot(document.getElementById('root')!).render(
-  <RouterProvider router={router}/>
+  <Provider store={store}>
+    <RouterProvider router={router}/>
+  </Provider>
 )
