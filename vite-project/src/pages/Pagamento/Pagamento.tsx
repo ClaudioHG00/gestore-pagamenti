@@ -1,6 +1,6 @@
-import "./component.css";
-import { Navbar } from "../../components/Navbar/component";
-import { Modal } from "../../components/Modal/component";
+import "./Pagamento.css";
+import { Navbar } from "../../components/Navbar/Navbar";
+import { Modal } from "../../components/Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { create, remove} from "../../store/pagamentoSlice";

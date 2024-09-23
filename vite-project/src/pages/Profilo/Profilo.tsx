@@ -1,8 +1,9 @@
-import "./component.css"
-import { Navbar } from "../../components/Navbar/component"
+import "./Profilo.css"
+import { Navbar } from "../../components/Navbar/Navbar.tsx"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { modifica } from "../../store/profiloSlice.tsx"
+import { RootState } from "../../store/store.tsx"
 
 export interface ProfiloType {
     nome: string,
@@ -13,8 +14,7 @@ export interface ProfiloType {
 
 export const Profilo = () => {
     
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const profilo = useSelector((state: any) => state.profilo);
+    const profilo = useSelector((state: RootState) => state.profilo);
 
     // Stato locale
     const [profiloModificato, setProfiloModificato] = useState<ProfiloType>(profilo)
@@ -42,29 +42,28 @@ export const Profilo = () => {
         <>
         <div className='container'>
             <Navbar></Navbar>
-            <div className="content">
+            <div className="content content-profilo">
                 <form onSubmit={handleSubmit}>
                     <div className="form-profilo black-text">
                         <div className="form-row">
-                            <label htmlFor="nome">Nome: </label>
-                            <input type="text" id="nome" name="nome" value={profiloModificato.nome} onChange={handleChange}/>
+                            <label className="pink-text" htmlFor="nome">Nome</label>
+                            <input className="grey-text" type="text" id="nome" name="nome" value={profiloModificato.nome} onChange={handleChange}/>
                         </div>
                         <div className="form-row">
-                            <label htmlFor="cognome">Cognome: </label>
-                            <input type="text" id="cognome" name="cognome" value={profiloModificato.cognome} onChange={handleChange}/>
+                            <label className="pink-text" htmlFor="cognome">Cognome</label>
+                            <input className="grey-text" type="text" id="cognome" name="cognome" value={profiloModificato.cognome} onChange={handleChange}/>
                         </div>
                         <div className="form-row">
-                            <label htmlFor="email">Email: </label>
-                            <input type="email" id="email" name="email" value={profiloModificato.email} onChange={handleChange}/>
+                            <label className="pink-text" htmlFor="email">Email</label>
+                            <input className="grey-text" type="email" id="email" name="email" value={profiloModificato.email} onChange={handleChange}/>
                         </div>
                         <div className="form-row">
-                            <label htmlFor="telefono">Telefono: </label>
-                            <input type="tel" id="telefono" name="telefono" value={profiloModificato.telefono} onChange={handleChange}/>
+                            <label className="pink-text" htmlFor="telefono">Telefono</label>
+                            <input className="grey-text" type="tel" id="telefono" name="telefono" value={profiloModificato.telefono} onChange={handleChange}/>
                         </div>
-                        <br></br>
-                        <button type="submit">Modifica</button>
                     </div>
                 </form>
+                <button type="submit">Modifica</button>
             </div>
         </div>
         </>

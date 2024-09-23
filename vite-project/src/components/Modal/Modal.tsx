@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { ModalContent } from "../ModalContent/component";
+import { ModalContent } from "../ModalContent/ModalContent";
 
 interface ModalProps {
     // metodoPagamento: MetodoPagamento

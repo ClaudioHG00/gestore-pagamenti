@@ -1,0 +1,21 @@
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #D90378;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /* Cursore a mano */
+    cursor: pointer;
+    /* Transizione per effetto hover */
+    transition: background-color 0.3s;
+    /* Ombra del bottone */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+button:hover {
+    /* Colore del bottone al passaggio del mouse */
+    background-color: #b6025a;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}

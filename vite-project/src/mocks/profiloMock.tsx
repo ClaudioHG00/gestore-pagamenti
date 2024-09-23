@@ -1,8 +1,8 @@
-import { ProfiloType } from "../pages/Profilo/component";
+import { ProfiloType } from "../pages/Profilo/Profilo";
 
 export const ProfiloMock: ProfiloType = {
-    nome: "Claudio",
-    cognome: "Huang",
-    email: "claudiohuang00@gmail.com",
-    telefono: "3292714884",
+    nome: "Mario",
+    cognome: "Rossi",
+    email: "mariorossi@gmail.com",
+    telefono: "1234567890",
 }

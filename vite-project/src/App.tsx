@@ -1,5 +1,5 @@
 import './App.css'
-import { Navbar } from './components/Navbar/component'
+import { Navbar } from './components/Navbar/Navbar'
 import reactLogo  from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useState } from 'react'

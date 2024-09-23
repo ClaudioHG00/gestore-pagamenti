@@ -2,12 +2,12 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App.tsx'
 import './index.css'
-import { Dashboard } from './pages/Dashboard/component.tsx';
-import { Pagamento } from './pages/Pagamento/component.tsx';
-import { Profilo } from './pages/Profilo/component.tsx';
+import { Dashboard } from './pages/Dashboard/Dashboard.tsx';
+import { Pagamento } from './pages/Pagamento/Pagamento.tsx';
+import { Profilo } from './pages/Profilo/Profilo.tsx';
 import { SaldoMock } from './mocks/saldoMock.tsx';
 import { TransazioniMock } from './mocks/transazioniMock.tsx';
-import { Transazioni } from './pages/Transazioni/component.tsx';
+import { Transazioni } from './pages/Transazioni/Transazioni.tsx';
 import { Provider } from 'react-redux';
 import store from './store/store.tsx';
 
@@ -18,7 +18,7 @@ const Routes = [
   },
   {
     path: "/home",
-    element: <App></App>
+    element: <Dashboard saldo={SaldoMock} transazioni={TransazioniMock}></Dashboard>
   }, 
   {
     path: "/dashboard",

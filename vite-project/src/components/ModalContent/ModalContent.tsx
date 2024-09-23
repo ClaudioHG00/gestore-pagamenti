@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { MetodoPagamento } from '../../pages/Pagamento/component'
-import'./components.css'
+import { MetodoPagamento } from '../../pages/Pagamento/Pagamento'
+import'./ModalContent.css'
 import { RootState } from '../../store/store'
 import { useState } from 'react'
 import { modifica } from '../../store/pagamentoSlice'

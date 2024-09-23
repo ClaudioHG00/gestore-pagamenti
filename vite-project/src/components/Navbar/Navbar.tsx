@@ -1,4 +1,4 @@
-import './components.css';
+import './Navbar.css';
 import pleoLogo from '../../assets/pleo-logo.png'
 import dashboardIcon from '../../assets/dashboard-icon.svg'
 import profileIcon from '../../assets/profile-icon.svg'
@@ -32,11 +32,11 @@ export const Navbar = () => {
                     <img src={pagamentoIcon} className='navbar-icon'/>
                     <NavLink to="/pagamento" className={({ isActive }) => (isActive ? 'active' : '')}>Pagamento</NavLink>
                 </li>
-                <li className='navbar-row utente'>
-                <NavLink to="/profilo">{utente}</NavLink>
-                </li>
             </ul>
 
+            <div className='bottom-item'>
+                <NavLink to="/profilo">{utente}</NavLink>
+            </div>
         </nav>
     ) 
 }

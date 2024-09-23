@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ProfiloType } from "../pages/Profilo/component"
+import { ProfiloType } from "../pages/Profilo/Profilo"
 import { ProfiloMock } from "../mocks/profiloMock"
 
 const initialState: ProfiloType = ProfiloMock

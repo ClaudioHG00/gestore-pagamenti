@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { MetodiPagamentoMock } from "../mocks/metodiPagamentoMock";
-import { MetodoPagamento } from "../pages/Pagamento/component";
+import { MetodoPagamento } from "../pages/Pagamento/Pagamento";
 
 const initialState: MetodoPagamento[] = MetodiPagamentoMock
 

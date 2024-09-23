@@ -1,0 +1,30 @@
+.transazioni-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Assicura che non superi l'altezza del contenitore */
+    max-height: 100%;
+    /* Aggiunge uno scroll verticale se necessario */
+    overflow-y: auto;
+    /* Distanza dalla barra di scorrimento */
+    padding-right: 10px;
+    
+    .transazione {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 15px;
+        /* max-height: 50px; */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .transazione-id,
+    .transazione-mittente,
+    .transazione-beneficiario,
+    .transazione-denaro,
+    .transazione-data,
+    .transazione-descrizione {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333;
+    }
+}

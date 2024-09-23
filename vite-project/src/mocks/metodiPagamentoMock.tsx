@@ -1,4 +1,4 @@
-import { MetodoPagamento } from "../pages/Pagamento/component";
+import { MetodoPagamento } from "../pages/Pagamento/Pagamento";
 
 export const MetodiPagamentoMock: MetodoPagamento[] = [
     {

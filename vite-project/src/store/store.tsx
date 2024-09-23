@@ -9,6 +9,7 @@ const store = configureStore({
   },
 });
 
+// Inferri automaticamente il tipo RootState a partire dal `store`
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = typeof store.dispatch; 
 export default store;
