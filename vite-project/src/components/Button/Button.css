@@ -1,7 +1,6 @@
 button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #D90378;
     color: white;
     border: none;
     border-radius: 5px;
@@ -15,7 +14,7 @@ button {
 
 button:hover {
     /* Colore del bottone al passaggio del mouse */
-    background-color: #b6025a;
+    background-color: #D90378;
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }

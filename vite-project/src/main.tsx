@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from './App.tsx'
 import './index.css'
 import { Dashboard } from './pages/Dashboard/Dashboard.tsx';
@@ -9,7 +10,7 @@ import { SaldoMock } from './mocks/saldoMock.tsx';
 import { TransazioniMock } from './mocks/transazioniMock.tsx';
 import { Transazioni } from './pages/Transazioni/Transazioni.tsx';
 import { Provider } from 'react-redux';
-import store from './store/store.tsx';
+import { persistor, store } from './store/store.tsx';
 
 const Routes = [
   {
@@ -42,6 +43,8 @@ const router = createBrowserRouter(Routes)
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <RouterProvider router={router}/>
+    <PersistGate loading={null} persistor={persistor}>
+      <RouterProvider router={router}/>
+    </PersistGate>
   </Provider>
 )

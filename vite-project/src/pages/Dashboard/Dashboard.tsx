@@ -20,20 +20,46 @@ export const Dashboard = (props: DashboardProps) => {
       <div className='container'>
         <Navbar></Navbar>
         <div className="content">
-          <h3 className='grey-text'>Saldo Attuale: {props.saldo.saldoAttuale} €</h3>
+          <div className='row'>
+            <h2 className='saldo-text'>Saldo Residuo: {props.saldo.saldoAttuale} €</h2>
+            <Button text="Transazioni" navigateTo={'/dashboard/transazioni'} />
+          </div>
           <div className="ultime-transazioni-container">
             {ultimeTransazioni.map((transazione) => (
               <div className="transazione" key={transazione.id}>
-                <div className="transazione-id">ID: {transazione.id}</div>
-                <div className="transazione-mittente">Mittente: {transazione.sender}</div>
-                <div className="transazione-beneficiario">Beneficiario: {transazione.beneficiario}</div>
-                <div className="transazione-denaro">Denaro: {transazione.denaro} €</div>
-                <div className="transazione-data">Data: {transazione.data.toLocaleDateString()}</div>
-                <div className="transazione-descrizione">Descrizione: {transazione.descrizione}</div>
+                {/* <div className="transazione-id">ID: {transazione.id}</div> */}
+
+                {/* Dettagli transazione a Sinistra */}
+                <div className='transazione-dettagli'>
+                  {transazione.sender 
+                    ? <div className="transazione-mittente">Mittente: {transazione.sender}</div>
+                    : null
+                  }
+                  {transazione.beneficiario
+                    ? <div className="transazione-beneficiario">Beneficiario: {transazione.beneficiario}</div>
+                    : null
+                  }
+                  <div className="transazione-data">Data: {transazione.data.toLocaleDateString()}</div>
+                  <div className="transazione-descrizione">Descrizione: {transazione.descrizione}</div>
+                </div>
+
+                  {/* Divisore */}
+                <div className="divisore"></div>
+                  
+                  {/* Denaro a Destra */}
+                <div className={
+                  transazione.denaro > 0
+                    ? 'transazione-denaro transazione-accredito'
+                    : 'transazione-denaro transazione-addebito'}>
+                      {
+                  transazione.denaro > 0
+                    ? '+'
+                    : ''
+                  }{transazione.denaro} €</div>
+
               </div>
             ))}
           </div>
-          <Button text="Transazioni" navigateTo={'/dashboard/transazioni'} />
         </div>
       </div>
     </>

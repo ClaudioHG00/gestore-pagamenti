@@ -61,9 +61,9 @@ export const Profilo = () => {
                             <label className="pink-text" htmlFor="telefono">Telefono</label>
                             <input className="grey-text" type="tel" id="telefono" name="telefono" value={profiloModificato.telefono} onChange={handleChange}/>
                         </div>
+                        <button type="submit">Modifica</button>
                     </div>
                 </form>
-                <button type="submit">Modifica</button>
             </div>
         </div>
         </>

@@ -3,7 +3,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { Modal } from "../../components/Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { create, remove} from "../../store/pagamentoSlice";
+import { create, remove } from "../../store/pagamentoSlice";
 import { useState } from "react";
 
 export interface MetodoPagamento {
@@ -44,18 +44,18 @@ export const Pagamento = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const idNewMetodoPagamento = metodiPagamento.length > 0 
-        ? Math.max(...metodiPagamento.map(mp => mp.id)) + 1  // Trovo il massimo id presente nell'array di metodiPagamento + 1 
-        : 1; // Altrimenti metto 1, se array vuoto
+        const idNewMetodoPagamento = metodiPagamento.length > 0
+            ? Math.max(...metodiPagamento.map(mp => mp.id)) + 1  // Trovo il massimo id presente nell'array di metodiPagamento + 1 
+            : 1; // Altrimenti metto 1, se array vuoto
 
         const newMetodoPagamento: MetodoPagamento = {
             id: idNewMetodoPagamento,
             tipo: formValues.tipo,
             numeroConto: parseFloat(formValues.numeroConto),
             dataScadenza: new Date(formValues.dataScadenza),
-            codiceSicurezza: formValues.codiceSicurezza 
-            ? parseFloat(formValues.codiceSicurezza) // Se esiste, inserisco
-            : undefined // altrimenti inserisco undefined
+            codiceSicurezza: formValues.codiceSicurezza
+                ? parseFloat(formValues.codiceSicurezza) // Se esiste, inserisco
+                : undefined // altrimenti inserisco undefined
         };
 
         dispatch(create(newMetodoPagamento));
@@ -74,7 +74,7 @@ export const Pagamento = () => {
                 <Navbar />
                 <div className="content">
                     <table>
-                        <tbody>
+                        {/* <tbody>
                             {metodiPagamento.map(metodoPagamento => (
                                 <tr key={metodoPagamento.id}>
                                     <td>{metodoPagamento.tipo}</td>
@@ -89,7 +89,30 @@ export const Pagamento = () => {
                                     </td>
                                 </tr>
                             ))}
+                        </tbody> */}
+                        <tbody>
+                            {metodiPagamento.map((metodoPagamento) => {
+                                // Converti la dataScadenza in un oggetto Date se non lo è già
+                                const dataScadenza = new Date(metodoPagamento.dataScadenza);
+                                return (
+                                    <tr key={metodoPagamento.id}>
+                                        <td>{metodoPagamento.tipo}</td>
+                                        <td>{metodoPagamento.numeroConto}</td>
+                                        <td>{dataScadenza.toLocaleDateString()}</td>
+                                        <td>{metodoPagamento.codiceSicurezza}</td>
+                                        <td>
+                                            <button onClick={() => handleRemove(metodoPagamento.id)}>
+                                                Elimina
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <Modal id={metodoPagamento.id} />
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
+
                     </table>
                     <form onSubmit={handleSubmit} className="form-inserimento">
                         <h2>Form Inserimento</h2>

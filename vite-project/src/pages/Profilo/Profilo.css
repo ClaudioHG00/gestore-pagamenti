@@ -12,6 +12,15 @@
     .form-profilo {
         width: 100%;
         margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            height: 70px;
+            width: 200px;
+            font-size: x-large;
+        }
 
         /* Stili delle righe del form */
         .form-row {
@@ -49,11 +58,5 @@
             
         }
         
-    }
-    
-    button {
-        height: 70px;
-        width: 200px;
-        font-size: x-large;
     }
 }
