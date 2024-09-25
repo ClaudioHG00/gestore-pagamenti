@@ -29,18 +29,18 @@ export const Dashboard = (props: DashboardProps) => {
               <div className="transazione" key={transazione.id}>
                 {/* <div className="transazione-id">ID: {transazione.id}</div> */}
 
-                {/* Dettagli transazione a Sinistra */}
+                {/* Dettagli transazione */}
                 <div className='transazione-dettagli'>
                   {transazione.sender 
-                    ? <div className="transazione-mittente">Mittente: {transazione.sender}</div>
+                    ? <div className="transazione-mittente">{transazione.sender}</div>
                     : null
                   }
                   {transazione.beneficiario
-                    ? <div className="transazione-beneficiario">Beneficiario: {transazione.beneficiario}</div>
+                    ? <div className="transazione-beneficiario">{transazione.beneficiario}</div>
                     : null
                   }
-                  <div className="transazione-data">Data: {transazione.data.toLocaleDateString()}</div>
-                  <div className="transazione-descrizione">Descrizione: {transazione.descrizione}</div>
+                  <div className="transazione-descrizione"> ~ {transazione.descrizione}</div>
+                  <div className="transazione-data">{transazione.data.toLocaleDateString()}</div>
                 </div>
 
                   {/* Divisore */}

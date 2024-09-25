@@ -18,9 +18,9 @@
 }
 
 .divisore {
-    width: 3px; 
-    background-color: rgba(0, 0, 0, 0.219); 
-    height: 170px; 
+    width: 3px;
+    background-color: rgba(0, 0, 0, 0.219);
+    height: 170px;
     margin-left: auto;
     margin-right: 100px;
 }
@@ -33,12 +33,14 @@
     padding: 40px;
     /* Assicura che non superi l'altezza del contenitore */
     max-height: 100%;
+    align-items: center;
 
     .transazione {
         /* max-height: 60px; */
         background-color: #ffffff;
         border-radius: 8px;
         padding: 40px;
+        width: 1200px;
         box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
         /* Transizione per effetto hover */
         transition: transform 0.2s;
@@ -46,35 +48,56 @@
         flex-direction: row;
         justify-content: space-between;
         color: rgb(158, 158, 158);
+        position: relative;
 
         .transazione-dettagli {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        
-        .transazione-id,
+
         .transazione-mittente,
-        .transazione-beneficiario,
-        .transazione-data,
+        .transazione-beneficiario {
+            font-size: 65px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            /* Permette di occupare più spazio disponibile */
+            flex-grow: 1;
+            /* Assicura che occupi tutta la larghezza del contenitore */
+            width: 100%;
+            text-align: left;
+            padding-left: 50px;
+            color: #7a7a7adc;
+        }
+
         .transazione-descrizione {
-            margin: 5px 0;
-            font-size: 20px;
+            padding-left: 120px;
+            margin-top: -10px; /* Sposta la descrizione verso l'alto */
+            font-size: 24px;
+        }
+
+        /* Data in basso a destra */
+        .transazione-data {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 14px;
+            color: rgb(158, 158, 158);
         }
 
         .transazione-denaro {
             display: flex;
             font-size: 75px;
             align-items: center;
-            width: 250px;
+            width: 300px;
         }
 
         .transazione-accredito {
-            color: #d90379ad;
+            color: rgba(0, 165, 0, 0.692);
         }
 
         .transazione-addebito {
-            color: rgb(158, 158, 158);
+            color: rgba(185, 0, 0, 0.774);
         }
     }
 

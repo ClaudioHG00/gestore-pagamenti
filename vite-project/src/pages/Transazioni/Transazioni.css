@@ -1,30 +1,87 @@
 .transazioni-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    /* Spazio tra i div */
+    gap: 35px;
+    padding: 40px;
     /* Assicura che non superi l'altezza del contenitore */
     max-height: 100%;
-    /* Aggiunge uno scroll verticale se necessario */
-    overflow-y: auto;
-    /* Distanza dalla barra di scorrimento */
-    padding-right: 10px;
-    
+    /* Limita l'altezza massima del contenitore e abilita lo scroll */
+    max-height: 75vh; /* O un'altra altezza specifica come '500px' */
+    overflow-y: auto; /* Abilita lo scroll verticale */
+    align-items: center;
+
     .transazione {
+        /* max-height: 60px; */
         background-color: #ffffff;
         border-radius: 8px;
-        padding: 15px;
-        /* max-height: 50px; */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+        /* Transizione per effetto hover */
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: rgb(158, 158, 158);
+        position: relative;
+        width: 1200px;
+
+        .transazione-dettagli {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .transazione-mittente,
+        .transazione-beneficiario {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            /* Permette di occupare più spazio disponibile */
+            flex-grow: 1;
+            /* Assicura che occupi tutta la larghezza del contenitore */
+            width: 100%;
+            text-align: left;
+            padding-left: 50px;
+            color: rgb(158, 158, 158);
+        }
+
+        .transazione-descrizione {
+            padding-left: 120px;
+            margin-top: -10px; /* Sposta la descrizione verso l'alto */
+            font-size: 24px;
+        }
+
+        /* Data in basso a destra */
+        .transazione-data {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 14px;
+            color: rgb(158, 158, 158);
+        }
+
+        .transazione-denaro {
+            display: flex;
+            font-size: 75px;
+            align-items: center;
+            width: 300px;
+        }
+
+        .transazione-accredito {
+            color: rgba(0, 165, 0, 0.692);
+        }
+
+        .transazione-addebito {
+            color: rgba(185, 0, 0, 0.774);
+        }
     }
 
-    .transazione-id,
-    .transazione-mittente,
-    .transazione-beneficiario,
-    .transazione-denaro,
-    .transazione-data,
-    .transazione-descrizione {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #333;
+    .transazione:hover {
+        /* Effetto di ingrandimento al passaggio del mouse */
+        cursor: pointer;
+        transform: scale(1.02);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
+
 }
