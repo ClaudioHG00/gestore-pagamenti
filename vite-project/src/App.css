@@ -18,9 +18,7 @@
 #root {
   height: 100%;
   margin: 0 auto;
-  background-color: #c2c6c9;
 }
-
 
 /* Container e Content delle componenti */
 
@@ -33,4 +31,9 @@
   padding: 20px;
   flex: 1;
   box-sizing: border-box;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
 }

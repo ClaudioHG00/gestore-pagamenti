@@ -29,6 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: #c2c6c9;
+  background-image: url('./assets/background.webp');
 }
 
 h1 {

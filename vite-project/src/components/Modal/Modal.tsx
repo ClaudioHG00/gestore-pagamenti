@@ -1,3 +1,4 @@
+import "./Modal.css"
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { ModalContent } from "../ModalContent/ModalContent";
@@ -12,7 +13,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
       <>
-        <button onClick={() => setShowModal(true)}>
+        <button className="carta-button" onClick={() => setShowModal(true)}>
           Modifica
         </button>
           {showModal && createPortal(
