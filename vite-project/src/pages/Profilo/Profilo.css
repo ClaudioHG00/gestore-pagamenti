@@ -9,6 +9,7 @@
     height: 800px;
     padding: 35px;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+    transform: scale(0.9);
 
     .form-profilo {
         display: flex;

@@ -14,8 +14,7 @@ export const Transazioni = (props: DashboardProps) => {
     <>
       <div className='container'>
         <Navbar></Navbar>
-        <div className="content">
-          <div className="transazioni-container">
+        <div className="content content-transazioni">
             {props.transazioni.map((transazione) => (
               <div className="transazione" key={transazione.id}>
                 {/* <div className="transazione-id">ID: {transazione.id}</div> */}
@@ -52,7 +51,6 @@ export const Transazioni = (props: DashboardProps) => {
             ))}
           </div>
         </div>
-      </div>
     </>
   )
 }

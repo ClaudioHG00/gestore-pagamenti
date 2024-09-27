@@ -17,11 +17,11 @@ export const Dashboard = (props: DashboardProps) => {
 
   return (
     <>
-      <div className='container'>
+      <div className='container container-dashboard'>
         <Navbar></Navbar>
-        <div className="content">
+        <div className="content content-dashboard">
           <div className='row'>
-            <h2 className='saldo-text'>Saldo Residuo: {props.saldo.saldoAttuale} €</h2>
+            <h2 className='saldo-text'>Saldo: {props.saldo.saldoAttuale} €</h2>
             <Button text="Transazioni" navigateTo={'/dashboard/transazioni'} />
           </div>
           <div className="ultime-transazioni-container">

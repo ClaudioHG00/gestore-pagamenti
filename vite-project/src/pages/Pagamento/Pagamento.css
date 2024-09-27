@@ -1,137 +1,151 @@
-.carousel {
-    width: 100%;
-    max-width: 1000px; /* Modifica in base alla tua larghezza */
-    margin: auto;
-    overflow: hidden;
+.content-pagamento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: scale(1.5);
 
-    .carousel-inner {
-        display: flex;
-        transition: transform 0.3s ease;
+    .carousel {
+        /* display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width: 100%; */
+        max-width: 700px;
+        margin: auto;
+        overflow: hidden;
 
-        .blur {
-            filter: blur(1px);
-        }
 
-        .carousel-item {
-            min-width: 100%;
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.3s ease;
 
-            img {
-                width: 100%;
-                display: block;
+            .blur {
+                filter: blur(1px);
             }
-        
+
+            .carousel-item {
+                min-width: 100%;
+
+                img {
+                    width: 100%;
+                    display: block;
+                }
+
+                /* Form Inserimento */
+                .credit-card {
+                    background-image: url('../../assets/credit-card.webp');
+                    background-size: contain;
+                    height: 465px;
+                    width: 700px;
+
+                    .form-inserimento {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        row-gap: 45px;
+                        margin-left: 15%;
+
+                        .form-row {
+                            display: flex;
+                            flex-direction: row;
+                            font-size: 25px;
+                            margin-bottom: 1%;
+
+                            input {
+                                font-size: 25px;
+                                border: none;
+                                background: none;
+                                text-align: center;
+                            }
+
+                            .nome-cognome,
+                            .tipo,
+                            .data-scadenza,
+                            .numero-conto {
+                                /* Colore di base argento */
+                                background: linear-gradient(90deg, #d1d1d1, #f8f8f8, #d1d1d1);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+
+                                /* Simulazione del rilievo attraverso ombre */
+                                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
+                                    -1px -1px 2px rgba(255, 255, 255, 0.5);
+                            }
+
+                            .data-scadenza,
+                            .numero-conto,
+                            .tipo,
+                            .codice-sicurezza,
+                            ::placeholder {
+                                color: #aaa;
+                                /* Colore del placeholder */
+                                opacity: 1;
+                                /* Rendi il placeholder pienamente visibile */
+                            }
+
+                            .data-scadenza,
+                            .numero-conto,
+                            .tipo {
+                                height: 40px;
+                            }
+
+                            .nome-cognome {
+                                margin-right: 50px;
+                                margin-left: -8%;
+                                margin-top: 1%;
+                            }
+
+                            .tipo {
+                                margin-top: 10%;
+                                margin-left: 11%;
+                                width: 68%;
+                            }
+
+                            .numero-conto {
+                                margin-top: 4%;
+                                margin-left: 11%;
+                                font-size: 30px;
+                                width: 80%;
+                            }
+
+                            .data-scadenza {
+                                margin-left: 21%;
+                                width: 13%;
+                            }
+
+                            .codice-sicurezza {
+                                margin-top: -197%;
+                                margin-left: 1327%;
+                                width: 35px;
+                                font-size: 15px;
+                                color: black;
+                                height: 20px;
+                            }
+                        }
+
+                        button {
+                            border: none;
+                        }
+
+                        .carta-button {
+                            margin-top: -6%;
+                            margin-left: -6%;
+                            background-color: transparent;
+                        }
+
+                        .elimina-button {}
+                    }
+                }
+            }
         }
     }
-    
+
     .carousel-control-prev,
     .carousel-control-next {
-        top: 50%;
+        font-size: 16px;
+        /* Puoi regolare la dimensione del testo */
         background-color: transparent;
         color: white;
         padding: 10px;
         cursor: pointer;
-        position: absolute;
     }
-
-    .carousel-control-prev {
-        margin-left: -7%;
-    }
-
-    .carousel-control-next {
-        margin-left: 40%;
-    }
-}
-
-
-/* Form Inserimento */
-.credit-card {
-    background-image: url('../../assets/credit-card.webp');
-    background-size: contain;
-    height: 465px;
-    width: 700px;
-    
-    .form-inserimento {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        row-gap: 45px;
-        margin-left: 15%;
-        
-        .form-row {
-            display: flex;
-            flex-direction: row;
-            font-size: 25px;
-            margin-bottom: 1%;
-            
-            input {
-                font-size: 25px;
-                border: none;
-                background: none;
-                text-align: center;
-            }
-            
-            .data-scadenza,
-            .numero-conto,
-            .tipo,
-            .codice-sicurezza,
-            ::placeholder {
-                color: #aaa; /* Colore del placeholder */
-                opacity: 1; /* Rendi il placeholder pienamente visibile */
-            }
-            
-            .data-scadenza,
-            .numero-conto,
-            .tipo {
-                color: white;
-                height: 40px;
-            }
-            
-            .nome-cognome {
-                margin-right: 50px;
-                margin-left: -8%;
-                margin-top: 2%;
-            }
-            
-            .tipo {
-                margin-top: 10%;
-                margin-left: 11%;
-                width: 68%;
-            }
-            
-            .numero-conto {
-                margin-top: 4%;
-                margin-left: 11%;
-                font-size: 30px;
-                width: 80%;
-            }
-            
-            .data-scadenza {
-                margin-left: 21%;
-                width: 13%;
-            }
-            
-            .codice-sicurezza {
-                margin-top: -209%;
-                margin-left: 1327%;
-                width: 35px;
-                font-size: 15px;
-                color: black;
-                height: 20px;
-            }
-        }
-    }
-}
-
-button {
-    border: none;
-}
-
-.carta-button {
-    margin-top: -6%;
-    margin-left: -6%;
-    background-color: transparent;
-    
-}
-
-.elimina-button {
 }

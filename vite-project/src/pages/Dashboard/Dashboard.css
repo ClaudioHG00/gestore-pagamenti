@@ -1,111 +1,123 @@
-.saldo-text {
-    text-shadow: 2px 2px 4px #D90378;
-    transition: transform 0.2s;
-}
+.container-dashboard {
+    margin-top: -6%;
 
-.saldo-text:hover {
-    transform: scale(1.08);
-    cursor: pointer;
-}
 
-.row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 70px;
-    padding-right: 90px;
-    align-items: flex-start;
-}
+    .content-dashboard {
+        transform: scale(0.85);
 
-.divisore {
-    width: 3px;
-    background-color: rgba(0, 0, 0, 0.219);
-    height: 170px;
-    margin-left: auto;
-    margin-right: 100px;
-}
+        .saldo-text {
+            text-shadow: 2px 2px 4px black;
+            transition: transform 0.2s;
+            font-size: 40px;
+        }
 
-.ultime-transazioni-container {
-    display: flex;
-    flex-direction: column;
-    /* Spazio tra i div */
-    gap: 35px;
-    padding: 40px;
-    /* Assicura che non superi l'altezza del contenitore */
-    max-height: 100%;
-    align-items: center;
+        .saldo-text:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+        }
 
-    .transazione {
-        /* max-height: 60px; */
-        background-color: #ffffff;
-        border-radius: 8px;
-        padding: 40px;
-        width: 1200px;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-        /* Transizione per effetto hover */
-        transition: transform 0.2s;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        color: rgb(158, 158, 158);
-        position: relative;
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 70px;
+            padding-right: 90px;
+            align-items: center;
+        }
 
-        .transazione-dettagli {
+        .divisore {
+            width: 3px;
+            background-color: rgba(0, 0, 0, 0.219);
+            height: 170px;
+            margin-left: auto;
+            margin-right: 100px;
+        }
+
+        .ultime-transazioni-container {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .transazione-mittente,
-        .transazione-beneficiario {
-            font-size: 65px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            /* Permette di occupare più spazio disponibile */
-            flex-grow: 1;
-            /* Assicura che occupi tutta la larghezza del contenitore */
-            width: 100%;
-            text-align: left;
-            padding-left: 50px;
-            color: #7a7a7adc;
-        }
-
-        .transazione-descrizione {
-            padding-left: 120px;
-            margin-top: -10px; /* Sposta la descrizione verso l'alto */
-            font-size: 24px;
-        }
-
-        /* Data in basso a destra */
-        .transazione-data {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            font-size: 14px;
-            color: rgb(158, 158, 158);
-        }
-
-        .transazione-denaro {
-            display: flex;
-            font-size: 75px;
+            /* Spazio tra i div */
+            gap: 35px;
+            padding: 40px;
+            /* Assicura che non superi l'altezza del contenitore */
+            max-height: 100%;
             align-items: center;
-            width: 300px;
-        }
 
-        .transazione-accredito {
-            color: rgba(0, 165, 0, 0.692);
-        }
+            .transazione {
+                /* max-height: 60px; */
+                background-color: #ffffff;
+                border-radius: 8px;
+                padding: 40px;
+                width: 1200px;
+                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+                /* Transizione per effetto hover */
+                transition: transform 0.2s;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                color: rgb(158, 158, 158);
+                position: relative;
 
-        .transazione-addebito {
-            color: rgba(185, 0, 0, 0.774);
-        }
-    }
+                .transazione-dettagli {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
 
-    .transazione:hover {
-        /* Effetto di ingrandimento al passaggio del mouse */
-        cursor: pointer;
-        transform: scale(1.02);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                .transazione-mittente,
+                .transazione-beneficiario {
+                    font-size: 65px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    /* Permette di occupare più spazio disponibile */
+                    flex-grow: 1;
+                    /* Assicura che occupi tutta la larghezza del contenitore */
+                    width: 100%;
+                    text-align: left;
+                    padding-left: 50px;
+                    color: #7a7a7adc;
+                }
+
+                .transazione-descrizione {
+                    padding-left: 120px;
+                    margin-top: -10px;
+                    /* Sposta la descrizione verso l'alto */
+                    font-size: 24px;
+                }
+
+                /* Data in basso a destra */
+                .transazione-data {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 20px;
+                    font-size: 14px;
+                    color: rgb(158, 158, 158);
+                }
+
+                .transazione-denaro {
+                    display: flex;
+                    font-size: 75px;
+                    align-items: center;
+                    width: 300px;
+                }
+
+                .transazione-accredito {
+                    color: rgba(0, 165, 0, 0.692);
+                }
+
+                .transazione-addebito {
+                    color: rgba(185, 0, 0, 0.774);
+                }
+            }
+
+            .transazione:hover {
+                /* Effetto di ingrandimento al passaggio del mouse */
+                cursor: pointer;
+                transform: scale(1.02);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            }
+
+        }
     }
 
 }

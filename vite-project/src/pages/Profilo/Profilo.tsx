@@ -13,7 +13,7 @@ export interface ProfiloType {
 }
 
 export const Profilo = () => {
-    
+
     const profilo = useSelector((state: RootState) => state.profilo);
 
     // Stato locale
@@ -29,43 +29,52 @@ export const Profilo = () => {
             ...profiloModificato, // Mantieni i campi esistenti con spread
             [name]: value,        // Aggiorna il campo specifico che è stato modificato  
         })
-    } 
+    }
 
+    // Submit del Form
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // Impedisce comportamento default del form (ricaricherebbe pagina)
-        // Invia l'azione di modifica con i dati aggiornati allo store (slice di profilo)
-        dispatch(modifica(profiloModificato));
-        console.log(profilo)
+        if (window.confirm('Sei sicuro di voler salvare le modifiche?')) {
+            // Invia l'azione di modifica con i dati aggiornati allo store (slice di profilo)
+            dispatch(modifica(profiloModificato));
+            console.log('Modifiche salvate:', profiloModificato);
+        }
+    };
+
+    // Funzione per gestire il reset del form
+    const handleReset = () => {
+        setProfiloModificato(profilo);
     };
 
     return (
         <>
-        <div className='container'>
-            <Navbar></Navbar>
-            <div className="content content-profilo">
-                <form onSubmit={handleSubmit}>
-                    <div className="form-profilo black-text">
-                        <div className="form-row">
-                            <label className="pink-text" htmlFor="nome">Nome</label>
-                            <input className="grey-text" type="text" id="nome" name="nome" value={profiloModificato.nome} onChange={handleChange}/>
+            <div className='container'>
+                <Navbar></Navbar>
+                <div className="content content-profilo">
+                    <form onSubmit={handleSubmit} onReset={handleReset}>
+                        <div className="form-profilo black-text">
+                            <div className="form-row">
+                                <label className="pink-text" htmlFor="nome">Nome</label>
+                                <input className="grey-text" type="text" id="nome" name="nome" value={profiloModificato.nome} onChange={handleChange} required/>
+                            </div>
+                            <div className="form-row">
+                                <label className="pink-text" htmlFor="cognome">Cognome</label>
+                                <input className="grey-text" type="text" id="cognome" name="cognome" value={profiloModificato.cognome} onChange={handleChange} required/>
+                            </div>
+                            <div className="form-row">
+                                <label className="pink-text" htmlFor="email">Email</label>
+                                <input className="grey-text" type="email" id="email" name="email" value={profiloModificato.email} onChange={handleChange} required/>
+                            </div>
+                            <div className="form-row">
+                                <label className="pink-text" htmlFor="telefono">Telefono</label>
+                                <input className="grey-text" type="tel" id="telefono" name="telefono" value={profiloModificato.telefono} onChange={handleChange} required/>
+                            </div>
+                            <button type="submit">Salva</button>
+                            <button type="reset">Annulla</button>
                         </div>
-                        <div className="form-row">
-                            <label className="pink-text" htmlFor="cognome">Cognome</label>
-                            <input className="grey-text" type="text" id="cognome" name="cognome" value={profiloModificato.cognome} onChange={handleChange}/>
-                        </div>
-                        <div className="form-row">
-                            <label className="pink-text" htmlFor="email">Email</label>
-                            <input className="grey-text" type="email" id="email" name="email" value={profiloModificato.email} onChange={handleChange}/>
-                        </div>
-                        <div className="form-row">
-                            <label className="pink-text" htmlFor="telefono">Telefono</label>
-                            <input className="grey-text" type="tel" id="telefono" name="telefono" value={profiloModificato.telefono} onChange={handleChange}/>
-                        </div>
-                        <button type="submit">Modifica</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
         </>
     )
 }

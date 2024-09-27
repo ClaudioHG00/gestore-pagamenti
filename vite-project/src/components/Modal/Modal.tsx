@@ -13,7 +13,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
       <>
-        <button className="carta-button" onClick={() => setShowModal(true)}>
+        <button type="button" className="carta-button" onClick={() => setShowModal(true)}>
           Modifica
         </button>
           {showModal && createPortal(
